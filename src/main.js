@@ -28,13 +28,50 @@ import results from './components/results.vue'
 import player from './components/player.vue'
 import video from './components/video.vue'
 import comment from './components/comment.vue'
-const routes = [
-  {path:'/',redirect:'/slider'},
-  {path:'/slider',component:slider},
-  {path:'/results',component:results},
-  {path:'/player',component:player},
-  {path:'/video',component:video},
-  {path:'/comment',component:comment},
+
+//日期格式组件
+import moment from 'moment'
+Vue.use(moment)
+
+//全局过滤器
+Vue.filter(`formatSinger`, (value) => {
+  let temStr = '';
+  for (let i = 0; i < value.length; i++) {
+    temStr += value[i].name;
+    if (i < value.length - 1) {
+      temStr += "/";
+    }
+  }
+  return temStr
+})
+Vue.filter('gettime',(value)=>{
+  return moment(value).format('YYYY年MM月DD日')
+})
+
+const routes = [{
+    path: '/',
+    redirect: '/slider'
+  },
+  {
+    path: '/slider',
+    component: slider
+  },
+  {
+    path: '/results/:search',
+    component: results
+  },
+  {
+    path: '/player/:id',
+    component: player
+  },
+  {
+    path: '/video/:mvid',
+    component: video
+  },
+  {
+    path: '/comment/:id',
+    component: comment
+  },
 ]
 const router = new VueRouter({
   routes

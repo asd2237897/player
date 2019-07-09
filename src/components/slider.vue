@@ -1,5 +1,5 @@
 <template>
-  <el-carousel :interval="4000" type="card" height="300px">
+  <el-carousel :interval="4000" type="card" height="240px">
     <el-carousel-item v-for="item in banners" class="my-element">
       <img :src="item.pic" alt="">
     </el-carousel-item>
@@ -25,6 +25,6 @@ export default {
 <style>
 .my-element img{
   width: 100%;
-  height: 300px;
+  height: 240px;
 }
 </style>

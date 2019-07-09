@@ -2,29 +2,37 @@
   <div id="player">
     <h2 class="title">黑云音乐</h2>
     <div class="search">
-      <input type="text" />
-      <button>
+      <input type="text" v-model="search" @keyup.enter="searchMusic" />
+      <button @click="searchMusic">
         <span class="iconfont icon-search"></span>
       </button>
     </div>
     <div class="tab-wrapper">
       <!-- tab栏 -->
       <div class="tab-bar">
-        <a active-class="active" class="bar-item">搜索结果</a>
-        <a active-class="active" class="bar-item">歌曲播放</a>
-        <a active-class="active" class="bar-item">mv</a>
-        <a active-class="active" class="bar-item">歌曲评论&gt;</a>
-        <a active-class="active" class="bar-item">推荐歌曲</a>
+        <router-Link to="/results" active-class="active" class="bar-item">搜索结果</router-Link>
+        <router-Link to="/player" active-class="active" class="bar-item">歌曲播放</router-Link>
+        <router-Link to="/video" active-class="active" class="bar-item">mv</router-Link>
+        <router-Link to="/comment" active-class="active" class="bar-item">歌曲评论</router-Link>
       </div>
-      <!-- 对应的内容区域 -->
-      <div class="tab-content"></div>
     </div>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "searchBar"
+  name: "searchBar",
+  data() {
+    return {
+      search: ""
+    };
+  },
+  methods: {
+    searchMusic() {
+      this.$router.push(`/results/${this.search}`);
+    }
+  }
 };
 </script>
 

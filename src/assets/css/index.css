@@ -5,6 +5,10 @@ a {
   width: 980px;
   margin: 0 auto;
 }
+.tab-content{
+  width: 980px;
+  margin: 0 auto;
+}
 #player ul {
   padding: 0;
 }
