@@ -10,11 +10,11 @@
     <div class="tab-wrapper">
       <!-- tab栏 -->
       <div class="tab-bar">
-        <a class="bar-item active">搜索结果</a>
-        <a class="bar-item">歌曲播放</a>
-        <a class="bar-item">mv</a>
-        <a class="bar-item">歌曲评论&gt;</a>
-        <a class="bar-item">推荐歌曲</a>
+        <a active-class="active" class="bar-item">搜索结果</a>
+        <a active-class="active" class="bar-item">歌曲播放</a>
+        <a active-class="active" class="bar-item">mv</a>
+        <a active-class="active" class="bar-item">歌曲评论&gt;</a>
+        <a active-class="active" class="bar-item">推荐歌曲</a>
       </div>
       <!-- 对应的内容区域 -->
       <div class="tab-content"></div>
